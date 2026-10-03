@@ -119,21 +119,10 @@ a:hover {
   text-decoration: none;
 }
 
-.brand svg {
-  width: 2rem;
-  height: 2rem;
-}
-
-.wordmark {
-  font-size: 1.35rem;
-  font-weight: 300;
-  letter-spacing: -0.01em;
-  line-height: 1;
-}
-
-/* The logotype sets "basalt" heavier, as in the logo kit. */
-.wordmark span {
-  font-weight: 700;
+/* Official lockup (634 x 200 viewBox); the dark variant carries the dark page background. */
+.brand img {
+  width: auto;
+  height: 2.75rem;
 }
 
 .nav {

@@ -10,17 +10,16 @@
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
-    <link rel="stylesheet" href="/assets/site.css?v=1" />
+    <link rel="stylesheet" href="/assets/site.css?v=2" />
   </head>
   <body>
     <header class="site-header">
       <div class="wrap">
         <a class="brand" href="/" aria-label="Basalt OS home">
-          <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false">
-            <path class="mark-ring" d="M 445.44,143.36 L 460.80,343.04 L 286.72,471.04 L 71.68,378.88 L 56.32,163.84 L 266.24,46.08" fill="none" stroke-width="56.32" stroke-linejoin="round" stroke-linecap="round" />
-            <polygon class="mark-core" points="256.00,179.20 327.68,235.52 302.08,322.56 204.80,317.44 184.32,230.40" />
-          </svg>
-          <span class="wordmark" aria-hidden="true">basalt <span>OS</span></span>
+          <picture>
+            <source srcset="/assets/lockup-on-dark.svg" media="(prefers-color-scheme: dark)" />
+            <img src="/assets/lockup.svg" width="634" height="200" alt="Basalt OS" />
+          </picture>
         </a>
       </div>
     </header>
