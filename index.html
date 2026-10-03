@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Basalt OS: a secure, light Linux distribution</title>
+    <meta
+      name="description"
+      content="Basalt OS is a secure, light Linux distribution based on Fedora, with encryption on by default, image-based updates with rollback, and a local assistant that works offline. Pre-alpha."
+    />
+    <link rel="canonical" href="https://basalt-os.org/" />
+    <meta name="theme-color" content="#f6f5f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14171b" media="(prefers-color-scheme: dark)" />
+
+    <link rel="icon" href="favicon.ico" sizes="32x32" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Basalt OS" />
+    <meta property="og:title" content="Basalt OS: a secure, light Linux distribution" />
+    <meta
+      property="og:description"
+      content="Secure defaults, image-based updates with rollback, and a local assistant that works offline. Based on Fedora. Pre-alpha."
+    />
+    <meta property="og:url" content="https://basalt-os.org/" />
+    <meta property="og:image" content="https://basalt-os.org/assets/social-preview.png" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="640" />
+    <meta property="og:image:alt" content="Basalt OS logo: an open hexagonal basalt column ring with a terra roxa core, and the line A secure, light Linux distribution with a local, offline assistant." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Basalt OS: a secure, light Linux distribution" />
+    <meta
+      name="twitter:description"
+      content="Secure defaults, image-based updates with rollback, and a local assistant that works offline. Based on Fedora. Pre-alpha."
+    />
+    <meta name="twitter:image" content="https://basalt-os.org/assets/social-preview.png" />
+
+    <link rel="stylesheet" href="assets/site.css?v=1" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="./" aria-label="Basalt OS home">
+          <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+            <path class="mark-ring" d="M 445.44,143.36 L 460.80,343.04 L 286.72,471.04 L 71.68,378.88 L 56.32,163.84 L 266.24,46.08" fill="none" stroke-width="56.32" stroke-linejoin="round" stroke-linecap="round" />
+            <polygon class="mark-core" points="256.00,179.20 327.68,235.52 302.08,322.56 204.80,317.44 184.32,230.40" />
+          </svg>
+          <span class="wordmark" aria-hidden="true">basalt <span>OS</span></span>
+        </a>
+        <nav class="nav" aria-label="Main">
+          <a class="nav-optional" href="#principles">Principles</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="https://github.com/basalt-os">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="wrap hero" aria-labelledby="hero-title">
+        <svg class="hero-mark" viewBox="0 0 512 512" role="img" aria-label="Basalt OS logo">
+          <path class="mark-ring" d="M 445.44,143.36 L 460.80,343.04 L 286.72,471.04 L 71.68,378.88 L 56.32,163.84 L 266.24,46.08" fill="none" stroke-width="56.32" stroke-linejoin="round" stroke-linecap="round" />
+          <polygon class="mark-core" points="256.00,179.20 327.68,235.52 302.08,322.56 204.80,317.44 184.32,230.40" />
+        </svg>
+        <div>
+          <p class="status"><span class="status-dot" aria-hidden="true"></span>Pre-alpha. Not for production.</p>
+          <h1 id="hero-title">Basalt OS</h1>
+          <p class="tagline">A secure, light Linux distribution with a local, offline assistant.</p>
+          <p class="lede">
+            Secure defaults from the first boot, the whole system updated as one signed image that
+            you can roll back with a single command, and an assistant that runs on your machine.
+            Basalt OS is in early development and there is nothing to download yet.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="https://github.com/basalt-os">
+              <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              github.com/basalt-os
+            </a>
+            <a class="button" href="#principles">Principles</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="principles" class="section" aria-labelledby="principles-title">
+        <div class="wrap">
+          <p class="eyebrow">Principles</p>
+          <h2 id="principles-title">Secure by default, light by design.</h2>
+          <p class="section-intro">
+            The safe choice is the default one. You should not need a hardening guide to get a system
+            you can trust.
+          </p>
+          <ul class="principles">
+            <li class="principle">
+              <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path class="icon-line" d="M24 5l15 6v11c0 10-6.5 17.5-15 21-8.5-3.5-15-11-15-21V11z" />
+                <path class="icon-fill" d="M19 17h10l2 5-7 9-7-9z" />
+              </svg>
+              <h3>SELinux enforcing, always</h3>
+              <p>
+                Mandatory access control is on in every image and checked at build time. It is never
+                switched to permissive to make something work.
+              </p>
+            </li>
+            <li class="principle">
+              <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path class="icon-line" d="M10 22h28v20H10zM16 22v-6a8 8 0 0116 0v6" />
+                <path class="icon-fill" d="M21 29h6v6h-6z" />
+              </svg>
+              <h3>Encrypted by default</h3>
+              <p>
+                Full disk encryption with LUKS2 is on from installation. The TPM2 unlocks the disk
+                only while the boot chain is unchanged, and you keep a recovery key.
+              </p>
+            </li>
+            <li class="principle">
+              <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path class="icon-line" d="M8 34l16 8 16-8M8 26l16 8 16-8" />
+                <path class="icon-fill" d="M8 18l16-8 16 8-16 8z" />
+              </svg>
+              <h3>Image-based updates</h3>
+              <p>
+                The system is built and updated as one image with bootc. If an update goes wrong,
+                one command rolls back to the previous image.
+              </p>
+            </li>
+            <li class="principle">
+              <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path class="icon-line" d="M12 6h18l8 8v28H12zM30 6v8h8M18 32l4 4 8-9" />
+                <path class="icon-fill" d="M17 14h8v4h-8z" />
+              </svg>
+              <h3>Signed images and packages</h3>
+              <p>
+                Images and packages are signed, and the system checks signatures before it accepts
+                an update.
+              </p>
+            </li>
+            <li class="principle">
+              <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path class="icon-line" d="M8 10h32v12H8zM8 28h32v12H8z" />
+                <circle class="icon-fill" cx="15" cy="16" r="2.5" />
+                <circle class="icon-fill" cx="15" cy="34" r="2.5" />
+              </svg>
+              <h3>Light, server first</h3>
+              <p>
+                The first image is a small server system with only what it needs. A desktop edition
+                comes later, on the same base.
+              </p>
+            </li>
+            <li class="principle">
+              <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path class="icon-line" d="M8 10h32v22H22l-8 7v-7H8z" />
+                <path class="icon-fill" d="M17 19h4v4h-4zM27 19h4v4h-4z" />
+              </svg>
+              <h3>A local assistant</h3>
+              <p>
+                It diagnoses problems and proposes actions, and never acts without your
+                confirmation. It works offline, and you can plug in a bigger model if you choose to.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="base" class="section" aria-labelledby="base-title">
+        <div class="wrap">
+          <p class="eyebrow">Base</p>
+          <h2 id="base-title">Based on Fedora.</h2>
+          <p class="section-intro">
+            Basalt OS builds on Fedora's bootable container images: Fedora packages, the Fedora
+            kernel and its signed boot chain. Basalt OS adds its own defaults, tools and assistant
+            on top.
+          </p>
+          <p class="note">
+            Basalt OS is an independent project. It is not affiliated with or endorsed by the Fedora
+            Project or Red Hat.
+          </p>
+        </div>
+      </section>
+
+      <section id="roadmap" class="section" aria-labelledby="roadmap-title">
+        <div class="wrap">
+          <p class="eyebrow">Roadmap</p>
+          <h2 id="roadmap-title">Small steps, each one usable.</h2>
+          <p class="section-intro">
+            The order of the work, not a schedule. Plans can change as we learn.
+          </p>
+          <ol class="roadmap">
+            <li class="step current">
+              <div class="step-head">
+                <h3>Milestone 0</h3>
+                <span class="tag tag-current">In progress</span>
+              </div>
+              <p>A bootable, signed image with disk encryption, updates and rollback.</p>
+            </li>
+            <li class="step">
+              <div class="step-head">
+                <h3>Storage and Secure Boot</h3>
+                <span class="tag">Next</span>
+              </div>
+              <p>Storage layout and tooling, and Secure Boot with the project's own keys.</p>
+            </li>
+            <li class="step">
+              <div class="step-head">
+                <h3>The assistant</h3>
+                <span class="tag">Planned</span>
+              </div>
+              <p>The local assistant that diagnoses, proposes and asks before acting.</p>
+            </li>
+            <li class="step">
+              <div class="step-head">
+                <h3>Repository and installer</h3>
+                <span class="tag">Planned</span>
+              </div>
+              <p>A package repository of our own and an installer.</p>
+            </li>
+            <li class="step">
+              <div class="step-head">
+                <h3>Desktop edition</h3>
+                <span class="tag">Later</span>
+              </div>
+              <p>A desktop image based on Sway, with the same secure defaults.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="involved" class="section" aria-labelledby="involved-title">
+        <div class="wrap">
+          <p class="eyebrow">Get involved</p>
+          <h2 id="involved-title">Follow along.</h2>
+          <p class="section-intro">
+            Development happens in the open on GitHub. Issues and ideas are welcome once the source
+            repository is public.
+          </p>
+          <div class="links">
+            <article class="link-card">
+              <div class="step-head">
+                <h3>basalt-os</h3>
+                <span class="tag">Organization</span>
+              </div>
+              <p>The GitHub organization for Basalt OS.</p>
+              <p><a href="https://github.com/basalt-os">github.com/basalt-os</a></p>
+            </article>
+            <article class="link-card soon">
+              <div class="step-head">
+                <h3>basalt-os/basalt-os</h3>
+                <span class="tag">Coming soon</span>
+              </div>
+              <p>The source of the image and its tools.</p>
+              <p class="mono">github.com/basalt-os/basalt-os</p>
+            </article>
+            <article class="link-card">
+              <div class="step-head">
+                <h3>OpenBasalt</h3>
+                <span class="tag">Family</span>
+              </div>
+              <p>Basalt OS is part of OpenBasalt, open source on solid ground.</p>
+              <p><a href="https://openbasalt.org">openbasalt.org</a></p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-text">
+          <p>Basalt OS, part of <a href="https://openbasalt.org">OpenBasalt</a>.</p>
+          <p>Basalt OS code is licensed under Apache-2.0. Based on Fedora; not affiliated with or endorsed by the Fedora Project.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="https://github.com/basalt-os">GitHub</a></li>
+          <li><a href="https://github.com/basalt-os/basalt-os.org">Site source</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
