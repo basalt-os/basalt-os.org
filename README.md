@@ -3,9 +3,10 @@
 Source of the [basalt-os.org](https://basalt-os.org) website, the home page of
 Basalt OS.
 
-Plain static HTML and CSS, no build step, no JavaScript, no web fonts and no
-third party requests. Served by GitHub Pages from the root of the `main`
-branch, with the custom domain set in `CNAME`.
+Plain static HTML and CSS, no build step, no web fonts and no first party
+JavaScript. The only script is the self-hosted analytics tag described below.
+Served by GitHub Pages from the root of the `main` branch, with the custom
+domain set in `CNAME`.
 
 ```
 index.html               home page
@@ -39,6 +40,20 @@ the Pages settings.
 
 When `assets/site.css` changes, bump the `?v=` query in both HTML files so
 browsers pick up the new file.
+
+## Privacy and analytics
+
+The site counts visits with [Umami](https://umami.is), self-hosted at
+analytics.openbasalt.org. It sets no cookies, keeps no cross-site identifier
+and collects no personal data. Both HTML files load the tag in `<head>` with:
+
+- `data-do-not-track="true"`, so browsers that send Do Not Track are not
+  counted;
+- `data-domains="basalt-os.org,www.basalt-os.org"`, so forks and local
+  previews do not report anything.
+
+A short note in the footer of the home page tells visitors the same. To stop
+counting, remove the `<script>` tag from `index.html` and `404.html`.
 
 ## Style
 
