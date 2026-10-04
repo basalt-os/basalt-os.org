@@ -449,6 +449,11 @@ h3 {
   border: 2px solid var(--muted);
 }
 
+/* Done steps: filled with the muted ink; the current step uses the core color. */
+.step.done::before {
+  background: var(--muted);
+}
+
 .step.current::before {
   background: var(--core);
   border-color: var(--core);

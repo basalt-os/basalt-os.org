@@ -36,7 +36,7 @@
     />
     <meta name="twitter:image" content="https://basalt-os.org/assets/social-preview.png" />
 
-    <link rel="stylesheet" href="assets/site.css?v=3" />
+    <link rel="stylesheet" href="assets/site.css?v=4" />
     <!-- Umami, self-hosted. No cookies, no cross-site identifier, no personal
          data. data-do-not-track makes it stand down for anyone whose browser
          asks not to be tracked, and data-domains keeps it quiet on forks and
@@ -249,43 +249,65 @@
           <p class="eyebrow">Roadmap</p>
           <h2 id="roadmap-title">Small steps, each one usable.</h2>
           <p class="section-intro">
-            The order of the work, not a schedule. Plans can change as we learn.
+            The order of the work, not a schedule. Done means it works in the source today; nothing
+            is released yet, and plans can change as we learn.
           </p>
           <ol class="roadmap">
-            <li class="step current">
+            <li class="step done">
               <div class="step-head">
-                <h3>Milestone 0</h3>
-                <span class="tag tag-current">In progress</span>
+                <h3>Base system</h3>
+                <span class="tag">Done</span>
               </div>
-              <p>An installable system with disk encryption, automatic snapshots and rollback.</p>
+              <p>An installable server system: btrfs on LUKS2 with TPM2 unlock, a snapshot before and after every update, and rollback from the running system or the boot menu.</p>
             </li>
-            <li class="step">
+            <li class="step done">
               <div class="step-head">
-                <h3>Storage and Secure Boot</h3>
-                <span class="tag">Next</span>
+                <h3>Secure Boot and signed packages</h3>
+                <span class="tag">Done</span>
               </div>
-              <p>Storage layout and tooling, and Secure Boot with the project's own keys.</p>
+              <p>Secure Boot with the option to trust only the project's own keys, and signed packages and repository metadata served from obpkg.org.</p>
             </li>
-            <li class="step">
+            <li class="step done">
               <div class="step-head">
                 <h3>The assistant</h3>
-                <span class="tag">Planned</span>
+                <span class="tag">Done</span>
               </div>
-              <p>The local assistant that diagnoses, proposes and asks before acting.</p>
+              <p>A confined system assistant, with VSM as its small decision model, that diagnoses and proposes fixes and applies nothing without your confirmation.</p>
             </li>
-            <li class="step">
+            <li class="step done">
               <div class="step-head">
-                <h3>Repository and installer</h3>
-                <span class="tag">Planned</span>
+                <h3>Agent confinement and audit</h3>
+                <span class="tag">Done</span>
               </div>
-              <p>A package repository of our own and an installer.</p>
+              <p>AI coding agents confined by SELinux, with the network denied by default and an allowlist per session, and one hash-chained audit ledger.</p>
             </li>
-            <li class="step">
+            <li class="step done">
+              <div class="step-head">
+                <h3>Installer</h3>
+                <span class="tag">Done</span>
+              </div>
+              <p>A text and a graphical installer that show the exact steps before anything is written and ask for your confirmation.</p>
+            </li>
+            <li class="step done">
+              <div class="step-head">
+                <h3>Desktop shell prototype</h3>
+                <span class="tag">Done</span>
+              </div>
+              <p>The Basalt shell, where a model can arrange the desktop through typed actions and every change waits for your confirmation.</p>
+            </li>
+            <li class="step current">
               <div class="step-head">
                 <h3>Desktop edition</h3>
+                <span class="tag tag-current">In progress</span>
+              </div>
+              <p>A desktop edition on SwayFX with the Basalt shell, voice, and the apps the AI can use for you, safely.</p>
+            </li>
+            <li class="step">
+              <div class="step-head">
+                <h3>Approvals from your phone</h3>
                 <span class="tag">Later</span>
               </div>
-              <p>A desktop edition based on Sway, with the same secure defaults.</p>
+              <p>Approve or refuse what the AI asks to do from a phone paired with your machine.</p>
             </li>
           </ol>
         </div>
