@@ -3,8 +3,9 @@
 Source of the [basalt-os.org](https://basalt-os.org) website, the home page of
 Basalt OS.
 
-Plain static HTML and CSS, no build step, no web fonts and no first party
-JavaScript. The only script is the self-hosted analytics tag described below.
+Plain static HTML and CSS, no build step and no web fonts. The only scripts
+are the self-hosted analytics tag and its small bot filter, both described
+below.
 Served by GitHub Pages from the root of the `main` branch, with the custom
 domain set in `CNAME`.
 
@@ -12,6 +13,7 @@ domain set in `CNAME`.
 index.html               home page
 404.html                 not found page
 assets/site.css          styles (light and dark via prefers-color-scheme)
+assets/umami-filter.js   keeps automated browsers out of the visit count
 assets/lockup*.svg       Basalt OS lockup (mark and wordmark), light and dark
 assets/social-preview.*  Open Graph image (PNG served, SVG source)
 assets/, favicon.ico     favicons and touch icon
@@ -50,10 +52,22 @@ and collects no personal data. Both HTML files load the tag in `<head>` with:
 - `data-do-not-track="true"`, so browsers that send Do Not Track are not
   counted;
 - `data-domains="basalt-os.org,www.basalt-os.org"`, so forks and local
-  previews do not report anything.
+  previews do not report anything;
+- `data-before-send="umamiBeforeSend"`, a function defined in
+  `assets/umami-filter.js`, loaded just before the tag.
+
+The filter keeps automated browsers out of the count without blocking them:
+crawlers, previews and test tools can fetch every page as usual, they are just
+not counted. Umami calls the function before each report, and it skips the
+report when `navigator.webdriver` is true, when the user agent carries a common
+headless or bot marker (HeadlessChrome, PhantomJS, bot, crawler, spider, slurp,
+facebookexternalhit, preview and similar, case insensitive), or when the screen
+is exactly 800x600 and the browser reports no languages at all. Every other
+report goes out unchanged. It stores nothing and sets no cookie. When the
+filter changes, bump the `?v=` query on its tag in both HTML files.
 
 A short note in the footer of the home page tells visitors the same. To stop
-counting, remove the `<script>` tag from `index.html` and `404.html`.
+counting, remove both `<script>` tags from `index.html` and `404.html`.
 
 ## Style
 
