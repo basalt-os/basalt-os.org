@@ -6,7 +6,7 @@
     <title>Basalt OS: a secure, light Linux distribution</title>
     <meta
       name="description"
-      content="Basalt OS is a secure, light Linux distribution based on Fedora, with encryption on by default, automatic snapshots and rollback around every update, and a local assistant that works offline. Pre-alpha."
+      content="Security and AI first. Basalt OS is a secure, light Linux distribution based on Fedora, with encryption on by default, automatic snapshots and rollback around every update, and a local assistant that works offline. Pre-alpha."
     />
     <link rel="canonical" href="https://basalt-os.org/" />
     <meta name="theme-color" content="#f6f5f2" media="(prefers-color-scheme: light)" />
@@ -36,7 +36,7 @@
     />
     <meta name="twitter:image" content="https://basalt-os.org/assets/social-preview.png" />
 
-    <link rel="stylesheet" href="assets/site.css?v=2" />
+    <link rel="stylesheet" href="assets/site.css?v=3" />
     <!-- Umami, self-hosted. No cookies, no cross-site identifier, no personal
          data. data-do-not-track makes it stand down for anyone whose browser
          asks not to be tracked, and data-domains keeps it quiet on forks and
@@ -64,6 +64,7 @@
           </picture>
         </a>
         <nav class="nav" aria-label="Main">
+          <a class="nav-optional" href="#ai-first">AI first</a>
           <a class="nav-optional" href="#principles">Principles</a>
           <a href="#roadmap">Roadmap</a>
           <a href="https://github.com/basalt-os">GitHub</a>
@@ -81,6 +82,7 @@
           <p class="status"><span class="status-dot" aria-hidden="true"></span>Pre-alpha. Not for production.</p>
           <h1 id="hero-title">Basalt OS</h1>
           <p class="tagline">A secure, light Linux distribution with a local, offline assistant.</p>
+          <p class="motto"><a href="#ai-first">Security and AI first.</a></p>
           <p class="lede">
             Secure defaults from the first boot, updates you can undo because the system takes a
             snapshot before and after every change, and an assistant that runs on your machine.
@@ -93,6 +95,53 @@
               github.com/basalt-os
             </a>
             <a class="button" href="#principles">Principles</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="ai-first" class="section" aria-labelledby="ai-first-title">
+        <div class="wrap">
+          <p class="eyebrow">Security and AI first</p>
+          <h2 id="ai-first-title">AI that does real work, inside limits that security sets.</h2>
+          <p class="section-intro">
+            Every part of Basalt OS is designed so that AI agents can do real work on the system
+            through typed, auditable actions, and so that this work is always confined, previewed
+            and confirmed by a person. AI is not bolted on at the end.
+          </p>
+          <p class="note">
+            When the two pull apart, security sets the limits and AI works inside them. Security is
+            never relaxed to make AI easier.
+          </p>
+          <div class="ai-columns">
+            <div class="ai-col">
+              <div class="step-head">
+                <h3>What exists today</h3>
+                <span class="tag tag-current">In the source</span>
+              </div>
+              <ul class="checklist">
+                <li>SELinux enforcing on every install, with the assistant and each agent in a confined domain of its own.</li>
+                <li>Secure Boot, with the option to trust only the project's own keys, and LUKS2 disk encryption that the TPM2 unlocks only while the boot chain is unchanged.</li>
+                <li>A btrfs snapshot before and after every package change, with rollback from the running system or the boot menu.</li>
+                <li>Signed packages and signed repository metadata, served from <a href="https://obpkg.org/">obpkg.org</a>.</li>
+                <li>A confined system assistant that diagnoses problems and proposes fixes, and applies nothing without your confirmation. Its small decision model, <a href="https://github.com/basalt-os/vsm">VSM</a>, says unknown when the evidence is not enough.</li>
+                <li>AI coding agents that run confined by SELinux, with the network denied by default and an allowlist per session.</li>
+                <li>One append-only, hash-chained audit ledger for agent sessions, network decisions, SELinux denials and rollbacks.</li>
+                <li>A desktop shell prototype, <a href="https://github.com/basalt-os/basalt-shell">basalt-shell</a>, where a model can arrange the desktop through typed actions and every change waits for the person on a confirmation sheet.</li>
+              </ul>
+            </div>
+            <div class="ai-col">
+              <div class="step-head">
+                <h3>What is coming</h3>
+                <span class="tag">In development</span>
+              </div>
+              <ul class="checklist checklist-soon">
+                <li>An AI that uses your desktop apps for you, by voice: it finds files, reads and summarizes e-mail, browses the web and works inside apps.</li>
+                <li>Content is data, never instructions: what it reads in an e-mail, a page or a file cannot trigger an action by itself.</li>
+                <li>The smallest scope for each task, with grants that expire. Sending, submitting, deleting or paying is always previewed and confirmed by you.</li>
+                <li>Local first: speech, models and search run on your machine by default, and remote models only if you turn them on.</li>
+              </ul>
+              <p class="col-note">This is the direction of the work, not a schedule.</p>
+            </div>
           </div>
         </div>
       </section>
