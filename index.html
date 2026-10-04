@@ -36,7 +36,7 @@
     />
     <meta name="twitter:image" content="https://basalt-os.org/assets/social-preview.png" />
 
-    <link rel="stylesheet" href="assets/site.css?v=4" />
+    <link rel="stylesheet" href="assets/site.css?v=5" />
     <!-- Umami, self-hosted. No cookies, no cross-site identifier, no personal
          data. data-do-not-track makes it stand down for anyone whose browser
          asks not to be tracked, and data-domains keeps it quiet on forks and
@@ -67,6 +67,7 @@
           <a class="nav-optional" href="#ai-first">AI first</a>
           <a class="nav-optional" href="#principles">Principles</a>
           <a href="#roadmap">Roadmap</a>
+          <a href="#feedback">Feedback</a>
           <a href="https://github.com/basalt-os">GitHub</a>
         </nav>
       </div>
@@ -94,7 +95,7 @@
               <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
               github.com/basalt-os
             </a>
-            <a class="button" href="#principles">Principles</a>
+            <a class="button" href="#feedback">Try it and tell us</a>
           </div>
         </div>
       </section>
@@ -313,6 +314,91 @@
         </div>
       </section>
 
+      <section id="feedback" class="section" aria-labelledby="feedback-title">
+        <div class="wrap">
+          <p class="eyebrow">Try it and tell us</p>
+          <h2 id="feedback-title">Try Basalt OS, then tell us what you think.</h2>
+          <p class="section-intro">
+            Basalt OS is young, and what you notice now shapes what it becomes. Tell us what broke,
+            what confused you and what you wish it did. A person reads every message.
+          </p>
+          <div class="ai-columns">
+            <div class="ai-col">
+              <div class="step-head">
+                <h3>Try it</h3>
+                <span class="tag tag-current">Pre-alpha</span>
+              </div>
+              <ul class="checklist">
+                <li>A live ISO, to boot and look around without installing anything, is coming soon.</li>
+                <li>Today you can build the installer ISO from the source and install it in a virtual machine. The steps are in the <a href="https://github.com/basalt-os/basalt-os#build">README of basalt-os/basalt-os</a> and in its <a href="https://github.com/basalt-os/basalt-os/blob/main/docs/lab.md">lab guide</a>.</li>
+                <li>It is early work: use a virtual machine or a spare computer, not one with data you need.</li>
+              </ul>
+            </div>
+            <div class="ai-col">
+              <div class="step-head">
+                <h3>Tell us, three ways</h3>
+              </div>
+              <ul class="checklist">
+                <li>The form on this page.</li>
+                <li>E-mail to <a href="mailto:feedback@basalt-os.org">feedback@basalt-os.org</a>.</li>
+                <li>From inside Basalt OS: run <code>basalt feedback</code>. It shows you exactly what will be sent and sends nothing until you say yes. When voice arrives, you can just say "send feedback".</li>
+              </ul>
+            </div>
+          </div>
+
+          <form
+            id="feedback-form"
+            class="feedback-form"
+            action="https://basalt-feedback.openbasalt.workers.dev/v1/feedback"
+            method="post"
+            accept-charset="utf-8"
+          >
+            <fieldset class="field">
+              <legend>What is it about?</legend>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="kind" value="bug" required /> Something is broken</label>
+                <label class="choice"><input type="radio" name="kind" value="idea" /> An idea</label>
+                <label class="choice"><input type="radio" name="kind" value="other" /> Something else</label>
+              </div>
+            </fieldset>
+            <div class="field">
+              <label for="fb-message">Your message</label>
+              <textarea id="fb-message" name="message" rows="6" maxlength="5000" required></textarea>
+            </div>
+            <div class="field">
+              <label for="fb-email">E-mail <span class="optional">(optional, only if you would like a reply)</span></label>
+              <input id="fb-email" name="email" type="email" maxlength="254" autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="fb-system">About your system <span class="optional">(optional)</span></label>
+              <textarea
+                id="fb-system"
+                name="system"
+                rows="4"
+                maxlength="4000"
+                placeholder="For example: the Basalt OS version, a virtual machine or which hardware, and what you were doing."
+              ></textarea>
+            </div>
+            <div class="hp" aria-hidden="true">
+              <label for="fb-website">Leave this field empty</label>
+              <input id="fb-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+            <div class="form-actions">
+              <button class="button primary" type="submit">Send feedback</button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </div>
+            <p class="privacy">
+              We keep what you write, the kind you picked, your e-mail if you give one and the system
+              details if you add them, with the time they arrived. We do not keep your IP address, set
+              cookies or share your message with anyone. To stop abuse, a hash of your address with a
+              salt that changes every day is kept for two days. The form is handled by a small
+              <a href="https://github.com/basalt-os/feedback-worker">open source service</a> on
+              Cloudflare Workers.
+            </p>
+          </form>
+        </div>
+      </section>
+
       <section id="involved" class="section" aria-labelledby="involved-title">
         <div class="wrap">
           <p class="eyebrow">Get involved</p>
@@ -363,5 +449,6 @@
         </ul>
       </div>
     </footer>
+    <script src="assets/feedback.js?v=1" defer></script>
   </body>
 </html>

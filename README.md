@@ -4,8 +4,8 @@ Source of the [basalt-os.org](https://basalt-os.org) website, the home page of
 Basalt OS.
 
 Plain static HTML and CSS, no build step and no web fonts. The only scripts
-are the self-hosted analytics tag and its small bot filter, both described
-below.
+are the self-hosted analytics tag and its small bot filter, and the feedback
+form's small enhancement script, all described below.
 Served by GitHub Pages from the root of the `main` branch, with the custom
 domain set in `CNAME`.
 
@@ -14,6 +14,9 @@ index.html               home page
 404.html                 not found page
 assets/site.css          styles (light and dark via prefers-color-scheme)
 assets/umami-filter.js   keeps automated browsers out of the visit count
+assets/feedback.js       sends the feedback form in place (the form works without it)
+feedback/sent.html       shown after a form post without JavaScript
+feedback/problem.html    shown when such a post is refused
 assets/lockup*.svg       Basalt OS lockup (mark and wordmark), light and dark
 assets/social-preview.*  Open Graph image (PNG served, SVG source)
 assets/, favicon.ico     favicons and touch icon
@@ -68,6 +71,27 @@ filter changes, bump the `?v=` query on its tag in both HTML files.
 
 A short note in the footer of the home page tells visitors the same. To stop
 counting, remove both `<script>` tags from `index.html` and `404.html`.
+
+## Feedback form
+
+The "Try it and tell us" section (`#feedback`) holds a plain HTML form that
+posts to the feedback endpoint, a Cloudflare Worker on workers.dev whose
+source is [basalt-os/feedback-worker](https://github.com/basalt-os/feedback-worker).
+The endpoint accepts browser requests only from `https://basalt-os.org`.
+
+- Without JavaScript the browser posts the form, and the endpoint redirects
+  to `feedback/sent.html` or `feedback/problem.html`.
+- With JavaScript, `assets/feedback.js` sends the same fields as JSON with
+  `fetch` (no cookies, no referrer) and shows the answer under the button.
+  The texts for the endpoint's error codes are at the top of the script.
+- A hidden `website` field is a honeypot: people never see it, bots fill it,
+  and the endpoint drops those posts.
+- What is stored is said under the form: the message, the kind, the e-mail
+  and system details when given, and the time. No IP address and no
+  cookies; the endpoint's README has the details.
+
+When the endpoint moves, change the form's `action` in `index.html`. When
+`assets/feedback.js` changes, bump its `?v=` query.
 
 ## Style
 
