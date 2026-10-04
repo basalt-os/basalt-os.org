@@ -88,7 +88,8 @@ The endpoint accepts browser requests only from `https://basalt-os.org`.
   and the endpoint drops those posts.
 - What is stored is said under the form: the message, the kind, the e-mail
   and system details when given, and the time. No IP address and no
-  cookies; the endpoint's README has the details.
+  cookies; a copy goes to the project's feedback mailbox; the endpoint's
+  README has the details.
 
 When the endpoint moves, change the form's `action` in `index.html`. When
 `assets/feedback.js` changes, bump its `?v=` query.
