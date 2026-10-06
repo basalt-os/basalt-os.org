@@ -22,7 +22,8 @@ assets/gallery/          gallery images: <id>-720.webp and .jpg thumbnails, <id>
 feedback/sent.html       shown after a form post without JavaScript
 feedback/problem.html    shown when such a post is refused
 assets/lockup*.svg       Basalt OS lockup (mark and wordmark), light and dark
-assets/social-preview.*  Open Graph image (PNG served, SVG source)
+assets/og/               Open Graph images, 1200x630, one per indexable page
+assets/social-preview.*  the earlier 1280x640 social image (PNG and SVG source)
 assets/, favicon.ico     favicons and touch icon
 robots.txt, sitemap.xml
 CNAME, .nojekyll         GitHub Pages settings
@@ -49,6 +50,15 @@ the Pages settings.
 
 When `assets/site.css` changes, bump the `?v=` query in every HTML file so
 browsers pick up the new file.
+
+## Search and sharing
+
+Every indexable page has its own title and description, a canonical URL, Open
+Graph and Twitter tags with a 1200x630 image from `assets/og/`, and is listed
+in `sitemap.xml` with its `lastmod`. The home page carries JSON-LD for Basalt
+OS as a SoftwareApplication, with its pre-alpha status and no offer until
+there is a release. The 404 page and `feedback/*` are `noindex` and stay out
+of the sitemap.
 
 ## Gallery
 
