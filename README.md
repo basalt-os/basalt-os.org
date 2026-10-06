@@ -4,17 +4,21 @@ Source of the [basalt-os.org](https://basalt-os.org) website, the home page of
 Basalt OS.
 
 Plain static HTML and CSS, no build step and no web fonts. The only scripts
-are the self-hosted analytics tag and its small bot filter, and the feedback
-form's small enhancement script, all described below.
+are the self-hosted analytics tag and its small bot filter, the feedback
+form's small enhancement script and the gallery viewer, all described below.
 Served by GitHub Pages from the root of the `main` branch, with the custom
 domain set in `CNAME`.
 
 ```
 index.html               home page
+gallery/index.html       gallery: screenshots and design mockups, with versions
+security/index.html      the security model in plain language, linking the docs
 404.html                 not found page
 assets/site.css          styles (light and dark via prefers-color-scheme)
 assets/umami-filter.js   keeps automated browsers out of the visit count
 assets/feedback.js       sends the feedback form in place (the form works without it)
+assets/gallery.js        gallery viewer and the optional Videos section (links work without it)
+assets/gallery/          gallery images: <id>-720.webp and .jpg thumbnails, <id>-1600.webp
 feedback/sent.html       shown after a form post without JavaScript
 feedback/problem.html    shown when such a post is refused
 assets/lockup*.svg       Basalt OS lockup (mark and wordmark), light and dark
@@ -43,8 +47,49 @@ basalt-os.org points the apex to the GitHub Pages addresses and `www` to
 `basalt-os.github.io`; once the certificate is issued, HTTPS is enforced in
 the Pages settings.
 
-When `assets/site.css` changes, bump the `?v=` query in both HTML files so
+When `assets/site.css` changes, bump the `?v=` query in every HTML file so
 browsers pick up the new file.
+
+## Gallery
+
+`gallery/index.html` lists each image as a `figure` in a `ul.shots`, grouped
+by section, with a one-line caption and the version and date it shows. Every
+image comes in three files under `assets/gallery/`: a 720 px wide WebP and
+JPEG thumbnail (the JPEG is the fallback for browsers without WebP) and a
+1600 px wide WebP opened in the viewer. Thumbnails carry `width`, `height`
+and `loading="lazy"`.
+
+Rules for new images: captures from lab virtual machines with made-up people,
+names and addresses only; no real accounts, e-mail addresses, internal host
+names or addresses, passwords, recovery keys or other keys (crop or blur
+them); no Fedora logos (blur web pages that show them). Mockups go in the
+Design previews section, which labels each one as a mockup. Keep the preview
+notice at the top of the page while Basalt OS is pre-alpha.
+
+Without JavaScript every thumbnail is a link to the large image. With it,
+`assets/gallery.js` opens a dialog with the caption, arrow keys, Home, End,
+Escape and swipe.
+
+Videos: the Videos section stays hidden until the JSON block
+`#gallery-videos` in `gallery/index.html` lists at least one video, as
+`[{"id": "<YouTube video id>", "title": "...", "caption": "..."}]`. The page
+requests nothing from YouTube until a person presses Play; then it loads the
+player from youtube-nocookie.com.
+
+## Social links
+
+The footer, the gallery and the security page link to the project on GitHub
+(basalt-os and openbasalt), X and YouTube with plain links and inline SVG
+icons (`ul.social`), no widgets or trackers.
+
+## Security page
+
+`security/index.html` explains the security model in plain language and
+links the documents in
+[basalt-os/basalt-os docs/security](https://github.com/basalt-os/basalt-os/tree/main/docs/security).
+When a new model release is published, update the version, the release link,
+the catalog version and date, and the control counts (from the summary of
+`controls.md`) in that page.
 
 ## Privacy and analytics
 

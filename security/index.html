@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Security: how Basalt OS protects you</title>
+    <meta
+      name="description"
+      content="The Basalt OS security model in plain language: the layers of protection, what each one stops and what it does not, and how the model is versioned and audited. Draft 0.1, in development."
+    />
+    <link rel="canonical" href="https://basalt-os.org/security/" />
+    <meta name="theme-color" content="#f6f5f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14171b" media="(prefers-color-scheme: dark)" />
+
+    <link rel="icon" href="../favicon.ico" sizes="32x32" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Basalt OS" />
+    <meta property="og:title" content="How Basalt OS protects you" />
+    <meta
+      property="og:description"
+      content="The layers of protection in Basalt OS, their honest limits, and how the security model is versioned and audited. Draft 0.1."
+    />
+    <meta property="og:url" content="https://basalt-os.org/security/" />
+    <meta property="og:image" content="https://basalt-os.org/assets/social-preview.png" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="640" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="stylesheet" href="../assets/site.css?v=6" />
+    <!-- Umami, self-hosted. No cookies, no cross-site identifier, no personal
+         data. data-do-not-track makes it stand down for anyone whose browser
+         asks not to be tracked, and data-domains keeps it quiet on forks and
+         local previews. umami-filter.js (data-before-send) leaves automated
+         browsers out of the count without blocking them. -->
+    <script defer src="../assets/umami-filter.js?v=1"></script>
+    <script
+      defer
+      src="https://analytics.openbasalt.org/script.js"
+      data-website-id="22a334d6-222d-4003-ab4c-a8d1c4f8b60f"
+      data-domains="basalt-os.org,www.basalt-os.org"
+      data-do-not-track="true"
+      data-before-send="umamiBeforeSend"
+    ></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="../" aria-label="Basalt OS home">
+          <picture>
+            <source srcset="../assets/lockup-on-dark.svg" media="(prefers-color-scheme: dark)" />
+            <img src="../assets/lockup.svg" width="634" height="200" alt="Basalt OS" />
+          </picture>
+        </a>
+        <nav class="nav" aria-label="Main">
+          <a href="../gallery/">Gallery</a>
+          <a href="./" aria-current="page">Security</a>
+          <a class="nav-optional" href="../#roadmap">Roadmap</a>
+          <a href="../#feedback">Feedback</a>
+          <a href="https://github.com/basalt-os">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="wrap page-head" aria-labelledby="page-title">
+        <p class="eyebrow">Security</p>
+        <h1 id="page-title">How Basalt OS protects you.</h1>
+        <p class="lede">
+          Basalt OS is built so that AI can help on your computer without being able to harm it or
+          you. This page explains the idea, the layers of protection, what each one stops and what
+          it does not, and how we keep the model honest as it grows.
+        </p>
+
+        <div class="model-version">
+          <div class="step-head">
+            <h2>Security model 0.1, draft</h2>
+            <span class="tag tag-current">In development</span>
+          </div>
+          <p>
+            Catalog version 1, updated 2026-10-06. The model is a draft and is published as it
+            evolves: each release is a tagged version on GitHub, through release candidates, until a
+            final 1.0 that comes with the first stable Basalt OS release. Requirements can still
+            change, and planned controls are expected while Basalt OS is pre-alpha.
+          </p>
+          <div class="section-links">
+            <a class="button primary" href="https://github.com/basalt-os/basalt-os/releases/tag/security-model-v0.1-draft">Release security-model-v0.1-draft</a>
+            <a class="button" href="https://github.com/basalt-os/basalt-os/tree/main/docs/security">The documents on GitHub</a>
+          </div>
+        </div>
+
+        <ul class="counts" aria-label="Controls in the catalog, as of 2026-10-06">
+          <li class="count"><span class="count-num">97</span><span>controls in 13 areas</span></li>
+          <li class="count"><span class="count-num">68</span><span>implemented</span></li>
+          <li class="count"><span class="count-num">12</span><span>partial</span></li>
+          <li class="count"><span class="count-num">17</span><span>planned</span></li>
+        </ul>
+        <div class="status-bar" aria-hidden="true">
+          <span class="bar-implemented" style="width: 70.1%"></span>
+          <span class="bar-partial" style="width: 12.4%"></span>
+          <span class="bar-planned" style="width: 17.5%"></span>
+        </div>
+      </section>
+
+      <section id="idea" class="section" aria-labelledby="idea-title">
+        <div class="wrap">
+          <p class="eyebrow">The idea</p>
+          <h2 id="idea-title">Safety lives in the system, not in the AI.</h2>
+          <p class="section-intro">
+            An AI model, whether ours, a bigger one you install or one from a cloud provider, can
+            only suggest. The operating system decides what it may touch and where it may connect,
+            and it asks you before anything changes. Everything that matters is written to a record
+            that cannot be quietly edited. A smarter model gets better at helping, not more powerful.
+          </p>
+          <p class="note">
+            When security and AI pull apart, security sets the limits and AI works inside them.
+            Each layer below says what it stops and, just as plainly, what it does not.
+          </p>
+        </div>
+      </section>
+
+      <section id="layers" class="section" aria-labelledby="layers-title">
+        <div class="wrap">
+          <p class="eyebrow">The layers</p>
+          <h2 id="layers-title">Nine layers, each with its limits.</h2>
+          <ol class="layers">
+            <li class="layer">
+              <h3>A verified start</h3>
+              <p>Secure Boot checks the boot loader and the kernel, and the kernel refuses unsigned drivers. Every Basalt package and the repository metadata are signed, and the system refuses a wrong or missing signature.</p>
+              <dl>
+                <div><dt>Stops</dt><dd>Tampered boot software, unsigned drivers, modified packages on a server or mirror.</dd></div>
+                <div><dt>Does not stop</dt><dd>A firmware or hardware attack, or a bug in a correctly signed package. A signature proves who published a file, not that it is free of bugs.</dd></div>
+              </dl>
+            </li>
+            <li class="layer">
+              <h3>Disk encryption</h3>
+              <p>The installer encrypts the disk by default. The TPM unlocks it only if the start-up was not tampered with; otherwise it asks for the recovery key you were shown when installing.</p>
+              <dl>
+                <div><dt>Stops</dt><dd>Someone who steals the computer or the disk and tries to read it.</dd></div>
+                <div><dt>Does not stop</dt><dd>Someone using the computer while it is on and unlocked, or who learns your password or recovery key. If you install without encryption, this layer is off.</dd></div>
+              </dl>
+            </li>
+            <li class="layer">
+              <h3>Confinement with SELinux</h3>
+              <p>SELinux is always on. Basalt's services, the assistant and every AI agent started through Basalt get their own narrow set of permissions, even when running as you or as root.</p>
+              <dl>
+                <div><dt>Stops</dt><dd>A tricked or broken program doing more than its job, like an agent reading your SSH keys or another project.</dd></div>
+                <div><dt>Does not stop</dt><dd>Programs you run yourself outside an agent session, which run with your full rights. Confined user accounts and confinement for all desktop apps are planned.</dd></div>
+              </dl>
+            </li>
+            <li class="layer">
+              <h3>You approve every change</h3>
+              <p>Agents and the assistant can only propose. You see exactly what will happen and confirm it, and only the desktop's own confirmation sheet or an administrator at a terminal can approve, never the program that asked. A snapshot is taken before a system change.</p>
+              <dl>
+                <div><dt>Stops</dt><dd>An AI tricked by a web page or an e-mail into acting for an attacker, and an agent approving its own request.</dd></div>
+                <div><dt>Does not stop</dt><dd>Approving something without reading it. The preview is exact, but the decision is yours. One approval gate for everything, with an Approvals app, is planned.</dd></div>
+              </dl>
+            </li>
+            <li class="layer">
+              <h3>An audit record you can trust</h3>
+              <p>One record of security events: what agents did, connections allowed or refused, what SELinux blocked, who became administrator. Each entry is chained to the previous one by a hash, and exports are signed.</p>
+              <dl>
+                <div><dt>Stops</dt><dd>Hiding what happened, and forging entries that look like another program's.</dd></div>
+                <div><dt>Does not stop</dt><dd>Root deleting the record. What root cannot do is make that invisible, because the chain no longer verifies.</dd></div>
+              </dl>
+            </li>
+            <li class="layer">
+              <h3>Network control for AI agents</h3>
+              <p>An agent session can connect only to the names on its list. Everything else is blocked by the kernel and recorded, and only a person can add a name.</p>
+              <dl>
+                <div><dt>Stops</dt><dd>An agent sending your data to a server it chose, including tricks through DNS names or your local network.</dd></div>
+                <div><dt>Does not stop</dt><dd>What an agent sends to a host on its list. Keep the lists short.</dd></div>
+              </dl>
+            </li>
+            <li class="layer">
+              <h3>AI agents in a box</h3>
+              <p>Agents such as Claude Code or Codex run through basalt-agent. Each session sees only its project folder, cannot read your keys or passwords and cannot become administrator. Its API key is added by a small proxy, never given to the agent.</p>
+              <dl>
+                <div><dt>Stops</dt><dd>A misbehaving agent stealing credentials, planting something that runs later, or leaking its key.</dd></div>
+                <div><dt>Does not stop</dt><dd>An agent spending your credits with its own provider, or damaging the project you gave it. Use version control.</dd></div>
+              </dl>
+            </li>
+            <li class="layer">
+              <h3>Signed models and knowledge</h3>
+              <p>The assistant's knowledge is signed and checked before use, and model files are installed only if their checksum matches. Text it reads in mail, pages and files is data, never instructions. The local model runs with no network access.</p>
+              <dl>
+                <div><dt>Stops</dt><dd>Poisoned knowledge, swapped model files and instructions hidden in content.</dd></div>
+                <div><dt>Does not stop</dt><dd>A wrong answer. The assistant can be mistaken; that is why it proposes and you confirm.</dd></div>
+              </dl>
+            </li>
+            <li class="layer">
+              <h3>Privacy when something leaves the computer</h3>
+              <p>Nothing is sent to us unless you send it. Feedback shows exactly what goes and removes names, addresses and secrets first. A cloud AI model is off by default and the administrator can forbid it.</p>
+              <dl>
+                <div><dt>Stops</dt><dd>Silent collection of your data by Basalt.</dd></div>
+                <div><dt>Does not stop</dt><dd>What a cloud AI provider you chose does with what you send it.</dd></div>
+              </dl>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="limits" class="section" aria-labelledby="limits-title">
+        <div class="wrap">
+          <p class="eyebrow">Honest limits</p>
+          <h2 id="limits-title">What Basalt OS does not promise.</h2>
+          <ul class="checklist checklist-soon">
+            <li>It does not make a computer safe from someone who already has administrator rights on it. It makes their actions visible.</li>
+            <li>It does not replace backups. Snapshots undo system changes, and they live on the same disk.</li>
+            <li>It does not check what Fedora ships beyond the signatures. Basalt OS uses Fedora's packages as they are.</li>
+            <li>It is not certified against any standard. The catalog maps to known references to help reviewers, and we test it in the open with a public adversarial suite, <a href="https://github.com/basalt-os/ai-audit-suite">basalt-os/ai-audit-suite</a>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="honest" class="section" aria-labelledby="honest-title">
+        <div class="wrap">
+          <p class="eyebrow">How it stays honest</p>
+          <h2 id="honest-title">A catalog of controls, checked on every change.</h2>
+          <div class="ai-columns">
+            <div class="ai-col">
+              <ul class="checklist">
+                <li>Every protection is a numbered control with a stable ID, like BSC-DISK-001. An ID is never reused; a retired control keeps it.</li>
+                <li>Each control has a status. Implemented means enforced in the shipped packages and checked; partial means only part of the scope or without the full check; planned means decided but not built, so nothing should rely on it yet.</li>
+                <li>Automated checks run in CI on every change, and the build fails when the catalog drifts from the code: a missing path, a missing test or a missing audit step.</li>
+                <li>Audits: before every release with the checklist in the audit guide, and every month with a full run of the audit guide on a lab installation. Gaps found become work items.</li>
+                <li>A control changes only through a recorded design decision, in the same change as the code, reviewed and approved. Weakening a control is allowed only this way.</li>
+              </ul>
+            </div>
+            <div class="ai-col">
+              <div class="step-head">
+                <h3>Versions</h3>
+              </div>
+              <ul class="checklist checklist-soon">
+                <li>0.x drafts while Basalt OS is pre-alpha and alpha.</li>
+                <li>Release candidates, 1.0-rc.N, once every control needed for the first stable release is in place or has a recorded exception.</li>
+                <li>1.0 with the first stable Basalt OS release.</li>
+              </ul>
+              <p class="col-note">
+                Each release is a Git tag and a GitHub release. See
+                <a href="https://github.com/basalt-os/basalt-os/blob/main/docs/security/change-policy.md#releases-of-the-security-model">releases of the security model</a>
+                and its <a href="https://github.com/basalt-os/basalt-os/blob/main/docs/security/change-policy.md#changelog-of-the-security-model">changelog</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="documents" class="section" aria-labelledby="documents-title">
+        <div class="wrap">
+          <p class="eyebrow">Read the details</p>
+          <h2 id="documents-title">The documents.</h2>
+          <p class="section-intro">
+            The full model lives with the source, in
+            <a href="https://github.com/basalt-os/basalt-os/tree/main/docs/security">docs/security</a> of basalt-os/basalt-os.
+          </p>
+          <ul class="doc-list">
+            <li><a href="https://github.com/basalt-os/basalt-os/blob/main/docs/security/README.md">README.md</a>: the overview, in plain words, of the layers on this page.</li>
+            <li><a href="https://github.com/basalt-os/basalt-os/blob/main/docs/security/threat-model.md">threat-model.md</a>: what we protect, from whom, and what we assume.</li>
+            <li><a href="https://github.com/basalt-os/basalt-os/blob/main/docs/security/controls.md">controls.md</a>: every control with its ID, requirement, status and how it is verified.</li>
+            <li><a href="https://github.com/basalt-os/basalt-os/blob/main/docs/security/audit-guide.md">audit-guide.md</a>: how to check each control yourself.</li>
+            <li><a href="https://github.com/basalt-os/basalt-os/blob/main/docs/security/change-policy.md">change-policy.md</a>: how the model changes, its releases and its changelog.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="report" class="section" aria-labelledby="report-title">
+        <div class="wrap">
+          <p class="eyebrow">Found a problem?</p>
+          <h2 id="report-title">Report it privately.</h2>
+          <p class="section-intro">
+            A way around any control is a security problem. Please do not open a public issue;
+            follow <a href="https://github.com/basalt-os/basalt-os/blob/main/SECURITY.md">SECURITY.md</a>
+            to report it privately. For anything else, <a href="../#feedback">tell us what you think</a>.
+          </p>
+          <div class="section-links">
+          <ul class="social" aria-label="Basalt OS and OpenBasalt elsewhere">
+            <li><a href="https://github.com/basalt-os" rel="me noopener"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>basalt-os on GitHub</a></li>
+            <li><a href="https://github.com/openbasalt" rel="me noopener"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>openbasalt on GitHub</a></li>
+            <li><a href="https://x.com/openbasalt" rel="me noopener" aria-label="OpenBasalt on X"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.21-6.82-5.97 6.82H1.68l7.73-8.84L1.25 2.25h6.83l4.71 6.23zm-1.16 17.52h1.83L7.08 4.13H5.12z"/></svg>X</a></li>
+            <li><a href="https://www.youtube.com/@OpenBasalt" rel="me noopener" aria-label="OpenBasalt on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>YouTube</a></li>
+          </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-text">
+          <p>Basalt OS, part of <a href="https://openbasalt.org">OpenBasalt</a>.</p>
+          <p>Basalt OS code is licensed under Apache-2.0. Based on Fedora; not affiliated with or endorsed by the Fedora Project.</p>
+          <p>This site counts visits with <a href="https://umami.is">Umami</a>, self-hosted: no cookies, no personal data, and it honours Do Not Track.</p>
+        </div>
+        <div class="footer-side">
+          <ul class="social" aria-label="Basalt OS and OpenBasalt elsewhere">
+            <li><a href="https://github.com/basalt-os" rel="me noopener"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>basalt-os on GitHub</a></li>
+            <li><a href="https://github.com/openbasalt" rel="me noopener"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>openbasalt on GitHub</a></li>
+            <li><a href="https://x.com/openbasalt" rel="me noopener" aria-label="OpenBasalt on X"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.21-6.82-5.97 6.82H1.68l7.73-8.84L1.25 2.25h6.83l4.71 6.23zm-1.16 17.52h1.83L7.08 4.13H5.12z"/></svg>X</a></li>
+            <li><a href="https://www.youtube.com/@OpenBasalt" rel="me noopener" aria-label="OpenBasalt on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>YouTube</a></li>
+          </ul>
+          <ul class="footer-links">
+            <li><a href="https://github.com/basalt-os/basalt-os.org">Site source</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

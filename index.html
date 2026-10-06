@@ -36,7 +36,7 @@
     />
     <meta name="twitter:image" content="https://basalt-os.org/assets/social-preview.png" />
 
-    <link rel="stylesheet" href="assets/site.css?v=5" />
+    <link rel="stylesheet" href="assets/site.css?v=6" />
     <!-- Umami, self-hosted. No cookies, no cross-site identifier, no personal
          data. data-do-not-track makes it stand down for anyone whose browser
          asks not to be tracked, and data-domains keeps it quiet on forks and
@@ -65,8 +65,9 @@
         </a>
         <nav class="nav" aria-label="Main">
           <a class="nav-optional" href="#ai-first">AI first</a>
-          <a class="nav-optional" href="#principles">Principles</a>
-          <a href="#roadmap">Roadmap</a>
+          <a href="gallery/">Gallery</a>
+          <a href="security/">Security</a>
+          <a class="nav-optional" href="#roadmap">Roadmap</a>
           <a href="#feedback">Feedback</a>
           <a href="https://github.com/basalt-os">GitHub</a>
         </nav>
@@ -95,6 +96,7 @@
               <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
               github.com/basalt-os
             </a>
+            <a class="button" href="gallery/">See what we are building</a>
             <a class="button" href="#feedback">Try it and tell us</a>
           </div>
         </div>
@@ -111,7 +113,8 @@
           </p>
           <p class="note">
             When the two pull apart, security sets the limits and AI works inside them. Security is
-            never relaxed to make AI easier.
+            never relaxed to make AI easier. The <a href="security/">security page</a> explains the
+            layers, their limits and how the model is versioned and audited.
           </p>
           <div class="ai-columns">
             <div class="ai-col">
@@ -311,6 +314,7 @@
               <p>Approve or refuse what the AI asks to do from a phone paired with your machine.</p>
             </li>
           </ol>
+          <p class="closing">Screens of the work in progress, with their versions, are in the <a href="gallery/">gallery</a>.</p>
         </div>
       </section>
 
@@ -444,10 +448,17 @@
           <p>Basalt OS code is licensed under Apache-2.0. Based on Fedora; not affiliated with or endorsed by the Fedora Project.</p>
           <p>This site counts visits with <a href="https://umami.is">Umami</a>, self-hosted: no cookies, no personal data, and it honours Do Not Track.</p>
         </div>
-        <ul class="footer-links">
-          <li><a href="https://github.com/basalt-os">GitHub</a></li>
-          <li><a href="https://github.com/basalt-os/basalt-os.org">Site source</a></li>
-        </ul>
+        <div class="footer-side">
+          <ul class="social" aria-label="Basalt OS and OpenBasalt elsewhere">
+            <li><a href="https://github.com/basalt-os" rel="me noopener"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>basalt-os on GitHub</a></li>
+            <li><a href="https://github.com/openbasalt" rel="me noopener"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>openbasalt on GitHub</a></li>
+            <li><a href="https://x.com/openbasalt" rel="me noopener" aria-label="OpenBasalt on X"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.21-6.82-5.97 6.82H1.68l7.73-8.84L1.25 2.25h6.83l4.71 6.23zm-1.16 17.52h1.83L7.08 4.13H5.12z"/></svg>X</a></li>
+            <li><a href="https://www.youtube.com/@OpenBasalt" rel="me noopener" aria-label="OpenBasalt on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>YouTube</a></li>
+          </ul>
+          <ul class="footer-links">
+            <li><a href="https://github.com/basalt-os/basalt-os.org">Site source</a></li>
+          </ul>
+        </div>
       </div>
     </footer>
     <script src="assets/feedback.js?v=1" defer></script>

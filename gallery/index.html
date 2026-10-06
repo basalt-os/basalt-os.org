@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gallery: what we are building, Basalt OS</title>
+    <meta
+      name="description"
+      content="Screenshots of Basalt OS as it is being built: the boot and login screens, the desktop, voice and the assistant, security and the installer, plus design mockups. Pre-alpha preview; it may change."
+    />
+    <link rel="canonical" href="https://basalt-os.org/gallery/" />
+    <meta name="theme-color" content="#f6f5f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14171b" media="(prefers-color-scheme: dark)" />
+
+    <link rel="icon" href="../favicon.ico" sizes="32x32" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Basalt OS" />
+    <meta property="og:title" content="Basalt OS gallery: what we are building" />
+    <meta
+      property="og:description"
+      content="Screenshots and design mockups of Basalt OS. Pre-alpha preview: not installable yet, and what you see may change."
+    />
+    <meta property="og:url" content="https://basalt-os.org/gallery/" />
+    <meta property="og:image" content="https://basalt-os.org/assets/gallery/login-720.jpg" />
+    <meta property="og:image:alt" content="The Basalt OS login screen." />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="stylesheet" href="../assets/site.css?v=6" />
+    <!-- Umami, self-hosted. No cookies, no cross-site identifier, no personal
+         data. data-do-not-track makes it stand down for anyone whose browser
+         asks not to be tracked, and data-domains keeps it quiet on forks and
+         local previews. umami-filter.js (data-before-send) leaves automated
+         browsers out of the count without blocking them. -->
+    <script defer src="../assets/umami-filter.js?v=1"></script>
+    <script
+      defer
+      src="https://analytics.openbasalt.org/script.js"
+      data-website-id="22a334d6-222d-4003-ab4c-a8d1c4f8b60f"
+      data-domains="basalt-os.org,www.basalt-os.org"
+      data-do-not-track="true"
+      data-before-send="umamiBeforeSend"
+    ></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="../" aria-label="Basalt OS home">
+          <picture>
+            <source srcset="../assets/lockup-on-dark.svg" media="(prefers-color-scheme: dark)" />
+            <img src="../assets/lockup.svg" width="634" height="200" alt="Basalt OS" />
+          </picture>
+        </a>
+        <nav class="nav" aria-label="Main">
+          <a href="./" aria-current="page">Gallery</a>
+          <a href="../security/">Security</a>
+          <a class="nav-optional" href="../#roadmap">Roadmap</a>
+          <a href="../#feedback">Feedback</a>
+          <a href="https://github.com/basalt-os">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="wrap page-head" aria-labelledby="page-title">
+        <p class="eyebrow">Gallery</p>
+        <h1 id="page-title">What we are building.</h1>
+        <p class="lede">
+          Screens from Basalt OS as it is being built, captured in virtual machines in our lab with
+          made-up people, names and addresses. Each one says which version it shows and when it was
+          taken. Select an image to see it larger.
+        </p>
+        <div class="preview-banner" role="note">
+          <span class="status-dot" aria-hidden="true"></span>
+          <div>
+            <p>Preview. Basalt OS is pre-alpha and not installable yet. What you see here may change.</p>
+            <p>Some screens come from work that is not released yet, and the last section shows design mockups, not software. Something you like or dislike? <a href="../#feedback">Try it and tell us</a>.</p>
+          </div>
+        </div>
+        <ul class="jump" aria-label="Sections">
+          <li><a href="#first-boot">First boot and login</a></li>
+          <li><a href="#desktop">Desktop</a></li>
+          <li><a href="#voice">Voice and assistant</a></li>
+          <li><a href="#security">Security and approvals</a></li>
+          <li><a href="#installer">Installer</a></li>
+          <li><a href="#design">Design previews</a></li>
+        </ul>
+      </section>
+
+      <!-- Videos: hidden until at least one video is listed in the JSON below.
+           Each entry: {"id": "<YouTube video id>", "title": "...", "caption": "..."}.
+           The player loads from youtube-nocookie.com only after a click. -->
+      <section id="videos" class="gallery-section" aria-labelledby="videos-title" hidden>
+        <div class="wrap">
+          <h2 id="videos-title">Videos</h2>
+          <p class="section-intro">
+            Short demos. The player is loaded from YouTube (youtube-nocookie.com) only when you
+            choose to play a video; until then nothing is requested from YouTube.
+          </p>
+          <ul class="video-list"></ul>
+        </div>
+      </section>
+      <script type="application/json" id="gallery-videos">[]</script>
+
+      <!-- SECTIONS -->
+      <section id="first-boot" class="gallery-section" aria-labelledby="first-boot-title">
+        <div class="wrap">
+          <h2 id="first-boot-title">First boot and login</h2>
+          <p class="section-intro">From power on to the desktop: the start-up screen, the disk unlock, snapshots in the boot menu and the login screen.</p>
+          <ul class="shots">
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/boot-splash-1600.webp" data-full="../assets/gallery/boot-splash-1600.webp" data-width="1600" data-height="900">
+                  <picture>
+                    <source srcset="../assets/gallery/boot-splash-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/boot-splash-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Dark start-up screen with the Basalt OS mark and a thin progress line over a pattern of basalt columns." />
+                  </picture>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">The start-up screen, with the basalt columns of the boot menu behind the mark.</span>
+                  <span class="shot-meta">plymouth-theme-basalt 0.3.0, 2026-10-06</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/boot-unlock-1600.webp" data-full="../assets/gallery/boot-unlock-1600.webp" data-width="1600" data-height="900">
+                  <picture>
+                    <source srcset="../assets/gallery/boot-unlock-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/boot-unlock-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Start-up screen with a card titled Unlock the disk, asking for the passphrase or the recovery key." />
+                  </picture>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">Unlocking the encrypted disk: the passphrase or the recovery key.</span>
+                  <span class="shot-meta">plymouth-theme-basalt 0.3.0, 2026-10-06</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/boot-snapshots-1600.webp" data-full="../assets/gallery/boot-snapshots-1600.webp" data-width="1600" data-height="900">
+                  <picture>
+                    <source srcset="../assets/gallery/boot-snapshots-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/boot-snapshots-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Boot menu listing three snapshots, each with its date and the dnf command it was taken before." />
+                  </picture>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">Snapshots in the boot menu: start the system as it was before an update.</span>
+                  <span class="shot-meta">basalt-grub2-theme 0.2.0, 2026-10-04</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/login-1600.webp" data-full="../assets/gallery/login-1600.webp" data-width="1600" data-height="900">
+                  <picture>
+                    <source srcset="../assets/gallery/login-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/login-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Dark login screen with a large clock, a card with a password field and the session Basalt on Sway, and other people at the bottom." />
+                  </picture>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">The login screen: clock, the last person who signed in, the session and quick settings.</span>
+                  <span class="shot-meta">basalt-greeter 0.7.0, 2026-10-06</span>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="desktop" class="gallery-section" aria-labelledby="desktop-title">
+        <div class="wrap">
+          <h2 id="desktop-title">Desktop</h2>
+          <p class="section-intro">The Basalt shell on Sway, the default, and on niri, an option.</p>
+          <ul class="shots">
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/desktop-niri-1600.webp" data-full="../assets/gallery/desktop-niri-1600.webp" data-width="1600" data-height="900">
+                  <picture>
+                    <source srcset="../assets/gallery/desktop-niri-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/desktop-niri-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Desktop with a browser, a text editor, Mousepad and two terminals, the window menu open over one terminal; the browser page is blurred." />
+                  </picture>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">Apps on niri with maximize and close buttons, and the window menu open. The web page is blurred here.</span>
+                  <span class="shot-meta">basalt-shell 0.6.3, 2026-10-06</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/desktop-sway-menu-1600.webp" data-full="../assets/gallery/desktop-sway-menu-1600.webp" data-width="1600" data-height="900">
+                  <picture>
+                    <source srcset="../assets/gallery/desktop-sway-menu-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/desktop-sway-menu-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Desktop on Sway with a window menu open under a terminal title bar, listing actions and their shortcuts." />
+                  </picture>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">Right click on a title bar on Sway: minimize, maximize, snap, tile, move or close.</span>
+                  <span class="shot-meta">basalt-shell 0.6.3, 2026-10-06</span>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="voice" class="gallery-section" aria-labelledby="voice-title">
+        <div class="wrap">
+          <h2 id="voice-title">Voice and assistant</h2>
+          <p class="section-intro">Voice and the assistant run on the computer. Nothing is downloaded until you choose, and nothing is sent or changed until you confirm.</p>
+          <ul class="shots">
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/voice-consent-1600.webp" data-full="../assets/gallery/voice-consent-1600.webp" data-width="800" data-height="450">
+                  <picture>
+                    <source srcset="../assets/gallery/voice-consent-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/voice-consent-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Card at the top of the screen asking to download the speech model for English, 148 MB, with Download and Not now buttons." />
+                  </picture>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">The first time you press the voice key: the speech model, its size and where it comes from, before any download.</span>
+                  <span class="shot-meta">basalt-shell 0.6.0, in development, 2026-10-06</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/voice-dictation-1600.webp" data-full="../assets/gallery/voice-dictation-1600.webp" data-width="960" data-height="830">
+                  <picture>
+                    <source srcset="../assets/gallery/voice-dictation-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/voice-dictation-720.jpg" width="720" height="622" loading="lazy" decoding="async" alt="Dictation card in Portuguese above a Mousepad window where the dictated sentence is underlined and not yet inserted." />
+                  </picture>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">Dictation into any app: the text waits, underlined, until you choose Insert. Shown in Portuguese.</span>
+                  <span class="shot-meta">basalt-shell 0.6.0, in development, 2026-10-06</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/voice-command-1600.webp" data-full="../assets/gallery/voice-command-1600.webp" data-width="960" data-height="540">
+                  <picture>
+                    <source srcset="../assets/gallery/voice-command-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/voice-command-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Command bar with the spoken request make it darker in Portuguese, a proposal listing four color changes, and Apply and Ignore buttons." />
+                  </picture>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">A spoken request becomes a proposal with the exact changes, applied only if you say so.</span>
+                  <span class="shot-meta">basalt-shell 0.6.0, in development, 2026-10-06</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/voice-settings-1600.webp" data-full="../assets/gallery/voice-settings-1600.webp" data-width="1040" data-height="760">
+                  <picture>
+                    <source srcset="../assets/gallery/voice-settings-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/voice-settings-720.jpg" width="720" height="526" loading="lazy" decoding="async" alt="Basalt Settings window in Portuguese on the Voice and assistant page, with answer languages, spoken answers and a button to download the local model." />
+                  </picture>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">Settings, Voice and assistant: the local model that fits this computer, downloaded only if you ask.</span>
+                  <span class="shot-meta">basalt-shell 0.6.0, in development, 2026-10-06</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/voice-reply-1600.webp" data-full="../assets/gallery/voice-reply-1600.webp" data-width="960" data-height="620">
+                  <picture>
+                    <source srcset="../assets/gallery/voice-reply-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/voice-reply-720.jpg" width="720" height="465" loading="lazy" decoding="async" alt="Reply sheet with sender, a fixed recipient, an editable subject and text, and Send and Discard buttons. All names and addresses are made up." />
+                  </picture>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">A reply drafted from your voice. Nothing is sent until you press Send.</span>
+                  <span class="shot-meta">basalt-shell 0.4.0, 2026-10-05</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/voice-injection-1600.webp" data-full="../assets/gallery/voice-injection-1600.webp" data-width="960" data-height="560">
+                  <picture>
+                    <source srcset="../assets/gallery/voice-injection-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/voice-injection-720.jpg" width="720" height="420" loading="lazy" decoding="async" alt="Assistant summary of an invoice e-mail with a warning that one message contains hidden text addressed to the assistant, which was ignored." />
+                  </picture>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">An e-mail that tries to give the assistant orders is flagged and treated as data. Nothing it asks is done.</span>
+                  <span class="shot-meta">basalt-shell 0.4.0, 2026-10-05</span>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="security" class="gallery-section" aria-labelledby="security-title">
+        <div class="wrap">
+          <h2 id="security-title">Security and approvals</h2>
+          <p class="section-intro">One app to see how the computer is protected and what agents, the assistant and administrators did on it.</p>
+          <ul class="shots">
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/sec-overview-1600.webp" data-full="../assets/gallery/sec-overview-1600.webp" data-width="1496" data-height="956">
+                  <picture>
+                    <source srcset="../assets/gallery/sec-overview-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/sec-overview-720.jpg" width="720" height="460" loading="lazy" decoding="async" alt="Security view with a notice that one item needs attention, and cards for the security audit, snapshots, activity record, updates, disk encryption, SELinux, the TPM and Secure Boot." />
+                  </picture>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">Security and Activity: one card per protection, what needs attention first.</span>
+                  <span class="shot-meta">basalt-security-activity 0.1.0, 2026-10-05</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/sec-activity-1600.webp" data-full="../assets/gallery/sec-activity-1600.webp" data-width="1496" data-height="956">
+                  <picture>
+                    <source srcset="../assets/gallery/sec-activity-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/sec-activity-720.jpg" width="720" height="460" loading="lazy" decoding="async" alt="Activity timeline of an AI agent session with allowed and refused connections, and the details of one record on the right." />
+                  </picture>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">Activity filtered to AI agents: every connection allowed or refused, and what SELinux stopped.</span>
+                  <span class="shot-meta">basalt-security-activity 0.1.0, 2026-10-05</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/sec-integrity-1600.webp" data-full="../assets/gallery/sec-integrity-1600.webp" data-width="1496" data-height="956">
+                  <picture>
+                    <source srcset="../assets/gallery/sec-integrity-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/sec-integrity-720.jpg" width="720" height="460" loading="lazy" decoding="async" alt="Activity view with a green notice: the activity record is intact, all 589 records are linked and unchanged." />
+                  </picture>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">Check integrity: every record is linked to the one before, so an edit or a deletion is detected.</span>
+                  <span class="shot-meta">basalt-security-activity 0.1.0, 2026-10-05</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/sec-confirm-1600.webp" data-full="../assets/gallery/sec-confirm-1600.webp" data-width="1600" data-height="900">
+                  <picture>
+                    <source srcset="../assets/gallery/sec-confirm-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/sec-confirm-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Confirmation sheet over the Security and Activity app: an assistant wants to change your desktop, with Decline and Confirm buttons." />
+                  </picture>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">When an app asks the assistant to act, the shell asks you first and records your answer.</span>
+                  <span class="shot-meta">basalt-security-activity 0.1.0, 2026-10-05</span>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="installer" class="gallery-section" aria-labelledby="installer-title">
+        <div class="wrap">
+          <h2 id="installer-title">Installer</h2>
+          <p class="section-intro">A graphical and a text installer that show the exact steps before anything is written to the disk.</p>
+          <ul class="shots">
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/inst-options-1600.webp" data-full="../assets/gallery/inst-options-1600.webp" data-width="1280" data-height="800">
+                  <picture>
+                    <source srcset="../assets/gallery/inst-options-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/inst-options-720.jpg" width="720" height="450" loading="lazy" decoding="async" alt="Graphical installer on the Options step with choices for home directories, partitioning and disk encryption." />
+                  </picture>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">Options: where /home lives, partitioning and what to encrypt, with the recommended choice first.</span>
+                  <span class="shot-meta">basalt-installer 0.2.0, 2026-10-04</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/inst-review-1600.webp" data-full="../assets/gallery/inst-review-1600.webp" data-width="1280" data-height="800">
+                  <picture>
+                    <source srcset="../assets/gallery/inst-review-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/inst-review-720.jpg" width="720" height="450" loading="lazy" decoding="async" alt="Graphical installer review step listing numbered commands, and a red box asking to type the disk name to confirm erasing it." />
+                  </picture>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">Review: the exact commands that will run. Nothing is written until you type the disk name.</span>
+                  <span class="shot-meta">basalt-installer 0.2.0, 2026-10-04</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/inst-dualboot-1600.webp" data-full="../assets/gallery/inst-dualboot-1600.webp" data-width="1280" data-height="800">
+                  <picture>
+                    <source srcset="../assets/gallery/inst-dualboot-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/inst-dualboot-720.jpg" width="720" height="450" loading="lazy" decoding="async" alt="Text installer listing the partitions already on the disk and the choice to keep them and install in the free space." />
+                  </picture>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">The text installer next to an existing system: keep its partitions and use the free space.</span>
+                  <span class="shot-meta">basalt-installer 0.2.0, 2026-10-04</span>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="design" class="gallery-section is-mockup" aria-labelledby="design-title">
+        <div class="wrap">
+          <h2 id="design-title">Design previews</h2>
+          <p class="section-intro">These are design proposals drawn as mockups, not screenshots of working software. They show where the desktop is going and will change.</p>
+          <ul class="shots">
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/mock-welcome-1600.webp" data-full="../assets/gallery/mock-welcome-1600.webp" data-width="1600" data-height="900">
+                  <picture>
+                    <source srcset="../assets/gallery/mock-welcome-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/mock-welcome-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Mockup of a welcome window with three cards: talk to it, ask the assistant, safe by default." />
+                  </picture><span class="shot-tag">Mockup</span>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">Mockup: the welcome on first use, with voice, the assistant and what is protected.</span>
+                  <span class="shot-meta">Design proposal, 2026-10-06</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/mock-quick-settings-1600.webp" data-full="../assets/gallery/mock-quick-settings-1600.webp" data-width="1600" data-height="900">
+                  <picture>
+                    <source srcset="../assets/gallery/mock-quick-settings-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/mock-quick-settings-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Mockup of a quick settings panel with suspend, restart, shut down and log out, a note about updates, toggles and sliders." />
+                  </picture><span class="shot-tag">Mockup</span>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">Mockup: quick settings with the power menu, and updates that install on restart after a snapshot.</span>
+                  <span class="shot-meta">Design proposal, 2026-10-06</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/mock-assistant-1600.webp" data-full="../assets/gallery/mock-assistant-1600.webp" data-width="1600" data-height="900">
+                  <picture>
+                    <source srcset="../assets/gallery/mock-assistant-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/mock-assistant-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Mockup of an assistant side panel that found a bank statement, cites two sources, warns about hidden text in another e-mail and proposes moving a file." />
+                  </picture><span class="shot-tag">Mockup</span>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">Mockup: the assistant panel, with numbered sources and a proposal that waits for you.</span>
+                  <span class="shot-meta">Design proposal, 2026-10-06</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/mock-approvals-1600.webp" data-full="../assets/gallery/mock-approvals-1600.webp" data-width="1600" data-height="900">
+                  <picture>
+                    <source srcset="../assets/gallery/mock-approvals-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/mock-approvals-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Mockup of an Approvals window with requests waiting, and the details of a request to restart a web server with Approve and Decline buttons." />
+                  </picture><span class="shot-tag">Mockup</span>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">Mockup: the Approvals app, with who asks, what changes, how to undo it and a stop button for all automation.</span>
+                  <span class="shot-meta">Design proposal, 2026-10-06</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="shot">
+              <figure>
+                <a class="shot-link" href="../assets/gallery/mock-drivers-1600.webp" data-full="../assets/gallery/mock-drivers-1600.webp" data-width="1600" data-height="900">
+                  <picture>
+                    <source srcset="../assets/gallery/mock-drivers-720.webp" type="image/webp" />
+                    <img src="../assets/gallery/mock-drivers-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Mockup of the Settings page Additional drivers recommending a graphics driver, with what installing does and a Secure Boot note." />
+                  </picture><span class="shot-tag">Mockup</span>
+                </a>
+                <figcaption>
+                  <span class="shot-caption">Mockup: additional drivers, with what installing does and the one-time Secure Boot step explained first.</span>
+                  <span class="shot-meta">Design proposal, 2026-10-06</span>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- /SECTIONS -->
+
+      <section class="section" aria-labelledby="more-title">
+        <div class="wrap">
+          <p class="eyebrow">Follow along</p>
+          <h2 id="more-title">New screens land as the work does.</h2>
+          <p class="section-intro">
+            Read how the protections you see here fit together on the <a href="../security/">security page</a>,
+            and follow the project for new screens and videos.
+          </p>
+          <div class="section-links">
+          <ul class="social" aria-label="Basalt OS and OpenBasalt elsewhere">
+            <li><a href="https://github.com/basalt-os" rel="me noopener"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>basalt-os on GitHub</a></li>
+            <li><a href="https://github.com/openbasalt" rel="me noopener"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>openbasalt on GitHub</a></li>
+            <li><a href="https://x.com/openbasalt" rel="me noopener" aria-label="OpenBasalt on X"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.21-6.82-5.97 6.82H1.68l7.73-8.84L1.25 2.25h6.83l4.71 6.23zm-1.16 17.52h1.83L7.08 4.13H5.12z"/></svg>X</a></li>
+            <li><a href="https://www.youtube.com/@OpenBasalt" rel="me noopener" aria-label="OpenBasalt on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>YouTube</a></li>
+          </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="lightbox" aria-label="Image viewer">
+      <div class="lightbox-bar">
+        <span class="lb-count" aria-live="polite"></span>
+        <button class="lb-btn lb-close" type="button" aria-label="Close">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg>
+        </button>
+      </div>
+      <div class="lightbox-stage">
+        <button class="lb-btn lb-prev" type="button" aria-label="Previous image">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7" /></svg>
+        </button>
+        <img alt="" />
+        <button class="lb-btn lb-next" type="button" aria-label="Next image">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7" /></svg>
+        </button>
+      </div>
+      <p class="lightbox-caption"><span class="shot-caption"></span><span class="shot-meta"></span></p>
+    </dialog>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-text">
+          <p>Basalt OS, part of <a href="https://openbasalt.org">OpenBasalt</a>.</p>
+          <p>Basalt OS code is licensed under Apache-2.0. Based on Fedora; not affiliated with or endorsed by the Fedora Project.</p>
+          <p>This site counts visits with <a href="https://umami.is">Umami</a>, self-hosted: no cookies, no personal data, and it honours Do Not Track.</p>
+        </div>
+        <div class="footer-side">
+          <ul class="social" aria-label="Basalt OS and OpenBasalt elsewhere">
+            <li><a href="https://github.com/basalt-os" rel="me noopener"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>basalt-os on GitHub</a></li>
+            <li><a href="https://github.com/openbasalt" rel="me noopener"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>openbasalt on GitHub</a></li>
+            <li><a href="https://x.com/openbasalt" rel="me noopener" aria-label="OpenBasalt on X"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.21-6.82-5.97 6.82H1.68l7.73-8.84L1.25 2.25h6.83l4.71 6.23zm-1.16 17.52h1.83L7.08 4.13H5.12z"/></svg>X</a></li>
+            <li><a href="https://www.youtube.com/@OpenBasalt" rel="me noopener" aria-label="OpenBasalt on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>YouTube</a></li>
+          </ul>
+          <ul class="footer-links">
+            <li><a href="https://github.com/basalt-os/basalt-os.org">Site source</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="../assets/gallery.js?v=1" defer></script>
+  </body>
+</html>
