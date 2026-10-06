@@ -227,7 +227,7 @@
                 <li>Every protection is a numbered control with a stable ID, like BSC-DISK-001. An ID is never reused; a retired control keeps it.</li>
                 <li>Each control has a status. Implemented means enforced in the shipped packages and checked; partial means only part of the scope or without the full check; planned means decided but not built, so nothing should rely on it yet.</li>
                 <li>Automated checks run in CI on every change, and the build fails when the catalog drifts from the code: a missing path, a missing test or a missing audit step.</li>
-                <li>Audits: before every release with the checklist in the audit guide, and every month with a full run of the audit guide on a lab installation. Gaps found become work items.</li>
+                <li>Audits: before every release with the checklist in the audit guide, and periodically with a full run of the audit guide on a lab installation. Gaps found become work items.</li>
                 <li>A control changes only through a recorded design decision, in the same change as the code, reviewed and approved. Weakening a control is allowed only this way.</li>
               </ul>
             </div>
