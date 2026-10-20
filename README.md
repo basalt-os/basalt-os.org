@@ -105,7 +105,7 @@ the catalog version and date, and the control counts (from the summary of
 
 The site counts visits with [Umami](https://umami.is), self-hosted at
 analytics.openbasalt.org. It sets no cookies, keeps no cross-site identifier
-and collects no personal data. Both HTML files load the tag in `<head>` with:
+and collects no personal data. Every HTML page except `feedback/*` loads the tag in `<head>` with:
 
 - `data-do-not-track="true"`, so browsers that send Do Not Track are not
   counted;
@@ -122,10 +122,11 @@ headless or bot marker (HeadlessChrome, PhantomJS, bot, crawler, spider, slurp,
 facebookexternalhit, preview and similar, case insensitive), or when the screen
 is exactly 800x600 and the browser reports no languages at all. Every other
 report goes out unchanged. It stores nothing and sets no cookie. When the
-filter changes, bump the `?v=` query on its tag in both HTML files.
+filter changes, bump the `?v=` query on its tag in every page.
 
 A short note in the footer of the home page tells visitors the same. To stop
-counting, remove both `<script>` tags from `index.html` and `404.html`.
+counting, remove the `<script>` tags from `index.html`, `404.html`, `gallery/index.html` and
+`security/index.html`.
 
 ## Feedback form
 
